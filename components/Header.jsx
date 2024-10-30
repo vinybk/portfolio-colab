@@ -11,9 +11,11 @@ const Header = () => {
       <div className="container mx-auto flex justify-between items-center">
         {/* logo */}
         <Link href="/">
-          <h1 className="text-4xl font-semibold">
-            Luke<span className="text-accent">.</span>
-          </h1>
+          <div className="logo-card">
+            <h1 className="text-4xl font-semibold">
+              B-KEY<span className="text-green-500">.</span>
+            </h1>
+          </div>
         </Link>
 
         {/* desktop nav & hire me button */}

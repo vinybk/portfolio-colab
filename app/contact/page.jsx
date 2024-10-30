@@ -20,29 +20,68 @@ const info = [
   {
     icon: <FaPhoneAlt />,
     title: "Phone",
-    description: "(+40) 321 654 876",
+    description: "07459939217",
   },
   {
     icon: <FaEnvelope />,
     title: "Email",
-    description: "youremail@gmail.com",
+    description: "thapabibekuk55@gmail.com",
   },
   {
     icon: <FaMapMarkerAlt />,
     title: "Address",
-    description: "Code Corner, Tech Town 13579",
+    description: "Woolwich, London UK",
   },
 ];
 
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 const Contact = () => {
+  const [submissionStatus, setSubmissionStatus] = useState(null);
+  const [emailError, setEmailError] = useState(null);
+
+  const validateEmail = (email) => {
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!emailRegex.test(email)) {
+      setEmailError("Invalid email address");
+      return false;
+    }
+    setEmailError(null);
+    return true;
+  };
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    const firstName = formData.get("firstname");
+    const lastName = formData.get("lastname");
+    const email = formData.get("email");
+    const phone = formData.get("phone");
+    const message = formData.get("message");
+
+    if (!validateEmail(email)) return;
+
+    formData.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_KEY);
+
+    const res = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    }).then((res) => res.json());
+
+    if (res.success) {
+      setSubmissionStatus({ message: "Message submitted successfully!", success: true });
+    } else {
+      setSubmissionStatus({ message: "Error submitting message. Please try again.", success: false });
+    }
+  };
+
   return (
     <motion.section
       initial={{ opacity: 0 }}
       animate={{
         opacity: 1,
-        transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
+        transition: { duration: 0.2, ease: "easeIn" },
       }}
       className="py-6"
     >
@@ -50,35 +89,19 @@ const Contact = () => {
         <div className="flex flex-col xl:flex-row gap-[30px]">
           {/* form */}
           <div className="xl:w-[54%] order-2 xl:order-none">
-            <form className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl">
-              <h3 className="text-4xl text-accent">Let's work together</h3>
-              <p className="text-white/60">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum
-                nihil sapiente pariatur id totam.
-              </p>
+          <form onSubmit={onSubmit} className="flex flex-col gap-6 p-10 bg-[#000000] rounded-xl contact-box">
+  <h3 className="text-4xl text-accent">Want to hire me..</h3>
+              <p className="text-white/60">If you have any questions or want to reach out to me  please fill out the form below.</p>
               {/* input */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <Input type="firstname" placeholder="Firstname" />
-                <Input type="lastname" placeholder="Lastname" />
-                <Input type="email" placeholder="Email address" />
-                <Input type="phone" placeholder="Phone number" />
+                <Input type="text" name="firstname" placeholder="Firstname" />
+                <Input type="text" name="lastname" placeholder="Lastname" />
+                <Input type="email" name="email" placeholder="Email address" />
+                <Input type="phone" name="phone" placeholder="Phone number" />
               </div>
-              {/* select */}
-              <Select>
-                <SelectTrigger className="w-full">
-                  <SelectValue placeholder="Select a service" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectGroup>
-                    <SelectLabel>Select a service</SelectLabel>
-                    <SelectItem value="est">Web Development</SelectItem>
-                    <SelectItem value="cst">UI/UX Design</SelectItem>
-                    <SelectItem value="mst">Logo Design</SelectItem>
-                  </SelectGroup>
-                </SelectContent>
-              </Select>
               {/* textarea */}
               <Textarea
+                name="message"
                 className="h-[200px]"
                 placeholder="Type your message here."
               />
@@ -86,6 +109,12 @@ const Contact = () => {
               <Button size="md" className="max-w-40">
                 Send message
               </Button>
+              {emailError && <p className="text-red-500">{emailError}</p>}
+              {submissionStatus && (
+                <p className={submissionStatus.success ? "text-green-500" : "text-red-500"}>
+                  {submissionStatus.message}
+                </p>
+              )}
             </form>
           </div>
           {/* info */}
@@ -95,11 +124,11 @@ const Contact = () => {
                 return (
                   <li key={index} className="flex items-center gap-6">
                     <div className="w-[52px] h-[52px] xl:w-[72px] xl:h-[72px] bg-[#27272c] text-accent rounded-md flex items-center justify-center">
-                      <div className="text-[28px]">{item.icon}</div>
+                      {item.icon}
                     </div>
-                    <div className="flex-1">
-                      <p className="text-white/60">{item.title}</p>
-                      <h3 className="text-xl">{item.description}</h3>
+                    <div className="flex flex-col">
+                      <h4 className="text-lg">{item.title}</h4>
+                      <p className="text-white/60">{item.description}</p>
                     </div>
                   </li>
                 );

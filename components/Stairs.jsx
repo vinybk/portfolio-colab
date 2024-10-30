@@ -15,7 +15,7 @@ const stairAnimation = {
 
 // calculate the reverse index fot staggred delay
 const reverseIndex = (index) => {
-  const totalSteps = 6; // number of steps
+  const totalSteps = 1; // number of steps
   return totalSteps - index - 1;
 };
 
@@ -36,7 +36,7 @@ const Stairs = () => {
             animate="animate"
             exit="exit"
             transition={{
-              duration: 0.4,
+              duration: 0.1,
               ease: "easeInOut",
               delay: reverseIndex(index) * 0.1,
             }}

@@ -1,36 +1,124 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Personal Portfolio Website
 
-## Getting Started
+A modern, responsive portfolio website built with Next.js, featuring particle animations, smooth transitions, and interactive elements.
 
-First, run the development server:
+## 🚀 Features
 
+- Responsive design for all devices
+- Interactive particle background
+- Smooth page transitions
+- Dynamic project showcase
+- Contact form with email validation
+- Downloadable CV
+- Social media integration
+- Professional skill visualization
+- Docker support for containerization
+
+## 🛠️ Built With
+
+- Next.js 14
+- React 18
+- Tailwind CSS
+- Framer Motion
+- React Icons
+- Swiper
+- TSParticles
+- Radix UI Components
+- Docker
+
+## 🏃‍♂️ Getting Started
+
+### Prerequisites
+
+- Node.js 18 or higher
+- npm or yarn
+
+### Installation
+
+1. Clone the repository
+
+```bash
+git clone https://github.com/yourusername/your-portfolio.git
+```
+
+2. Install dependencies
+```bash
+npm install
+# or
+yarn install
+```
+
+3. Run the development server
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### Docker Setup
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+1. Build the Docker image
 
-## Learn More
+```bash
+docker build -t portfolio .
+```
 
-To learn more about Next.js, take a look at the following resources:
+2. Run the container
+```bash
+docker run -p 3000:3000 portfolio
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📁 Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+portfolio/
+├── app/ # Next.js app directory
+│ ├── contact/ # Contact page
+│ ├── resume/ # Resume page
+│ ├── work/ # Projects showcase
+│ └── layout.jsx # Root layout
+├── components/ # Reusable components
+├── public/ # Static assets
+└── styles/ # Global styles
+```
 
-## Deploy on Vercel
+## 🚀 Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The project can be deployed on Vercel with these steps:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. Push your code to GitHub
+2. Connect your repository to Vercel
+3. Deploy with one click
+
+## 📝 Environment Variables
+
+Create a `.env.local` file in the root directory:
+
+```env
+NEXT_PUBLIC_CONTACT_FORM_KEY=your_form_key
+```
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the ISC License - see the LICENSE file for details
+
+## 👤 Author
+
+Bibek Thapa
+- LinkedIn: [/bibek-thapa1](https://www.linkedin.com/in/bibek-thapa1/)
+- GitHub: [@B-KEY](https://github.com/B-KEY)
+
+## 🙏 Acknowledgments
+
+- Next.js team for the amazing framework
+- Vercel for hosting
+- All open-source contributors

@@ -7,20 +7,20 @@ const Photo = () => {
   return (
     <div className="w-full h-full relative">
       <motion.div
-        initial={{ opacity: 0 }}
+        initial={{ opacity: 1 }}
         animate={{
           opacity: 1,
-          transition: { delay: 2, duration: 0.4, ease: "easeIn" },
+          transition: { duration: 0.1, ease: "easeIn" },
         }}
       >
         {/* image */}
         <motion.div
-          initial={{ opacity: 0 }}
+          initial={{ opacity: 1 }}
           animate={{
             opacity: 1,
-            transition: { delay: 2.4, duration: 0.4, ease: "easeInOut" },
+            transition: { duration: 0.1, ease: "easeInOut" },
           }}
-          className="w-[298px] h-[298px] xl:w-[498px] xl:h-[498px] mix-blend-lighten absolute"
+          className="w-[300px] h-[300px] xl:w-[506px] xl:h-[506px] mix-blend-lighten absolute rounded-full"
         >
           <Image
             src="/assets/photo.png"
@@ -28,7 +28,7 @@ const Photo = () => {
             quality={100}
             fill
             alt=""
-            className="object-contain"
+            className="object-contain rounded-full"
           />
         </motion.div>
 
@@ -42,8 +42,8 @@ const Photo = () => {
           <motion.circle
             cx="253"
             cy="253"
-            r="250"
-            stroke="#00ff99"
+            r="253"
+            stroke="#FF0000"
             strokeWidth="4"
             strokeLinecap="round"
             strokeLinejoin="round"

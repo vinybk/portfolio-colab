@@ -15,39 +15,40 @@ import { SiTailwindcss, SiNextdotjs } from "react-icons/si";
 const about = {
   title: "About me",
   description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quibusdam, sunt explicabo inventore.",
+    "You can find me on social media platforms like LinkedIn, Twitter, and GitHub from the links in home page",
+
   info: [
     {
       fieldName: "Name",
-      fieldValue: "Luke Coleman",
+      fieldValue: "Bibek Thapa",
     },
     {
       fieldName: "Phone",
-      fieldValue: "(+40) 321 654 678",
+      fieldValue: "07459939217",
     },
     {
       fieldName: "Experience",
-      fieldValue: "12+ Years",
+      fieldValue: "Graduate",
     },
     {
-      fieldName: "Skype",
-      fieldValue: "luke.01",
+      fieldName: "LinkedIn",
+      fieldValue: "/bibek-thapa1",
     },
     {
       fieldName: "Nationality",
-      fieldValue: "American",
+      fieldValue: "Nepalese",
     },
     {
       fieldName: "Email",
-      fieldValue: "luke.01@gmail.com",
+      fieldValue: "thapabibekuk55@gmail.com",
     },
     {
-      fieldName: "Freelance",
-      fieldValue: "Available",
+      fieldName: "Available",
+      fieldValue: "yes",
     },
     {
       fieldName: "Languages",
-      fieldValue: "English, Spanish",
+      fieldValue: "English, Nepali",
     },
   ],
 };
@@ -57,37 +58,17 @@ const experience = {
   icon: "/assets/resume/badge.svg",
   title: "My experience",
   description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quibusdam, sunt explicabo inventore.",
+    "A summary of my professional journey, highlighting my roles in technology and operations at leading organizations such as Correlation One and Amazon.. ",
   items: [
     {
-      company: "Tech Solutions Inc.",
-      position: "Full Stack Developer",
+      company: "Correlation One",
+      position: "Information Technology Program",
+      duration: "2024 - Present",
+    },
+    {
+      company: "Amazon",
+      position: "Inbound Flow Operation",
       duration: "2022 - Present",
-    },
-    {
-      company: "Web Design Studio",
-      position: "Front-End Developer Intern",
-      duration: "Summer 2021",
-    },
-    {
-      company: "E-commerce Startup",
-      position: "Freelance Web Developer",
-      duration: "2020 - 2021",
-    },
-    {
-      company: "Tech Academy",
-      position: "Teaching Assistant",
-      duration: "2019 - 2020",
-    },
-    {
-      company: "Digital Agency",
-      position: "UI/UX Designer",
-      duration: "2018 - 2019",
-    },
-    {
-      company: "Software Development Firm",
-      position: "Junior Developer",
-      duration: "2017 - 2018",
     },
   ],
 };
@@ -97,37 +78,32 @@ const education = {
   icon: "/assets/resume/cap.svg",
   title: "My education",
   description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quibusdam, sunt explicabo inventore.",
+    "I am dedicated to ongoing education and continuous professional development, aiming to enhance my knowledge and expertise in the field of technology.",
   items: [
     {
-      institution: "Online Course Platform",
-      degree: "Full Stack Web Development Bootcamp",
-      duration: "2023",
+      institution: "Northumbria University UK",
+      degree: "MSc CyberSecurity",
+      duration: "2024 - 2026",
     },
     {
-      institution: "Codecademy",
-      degree: "Front-end Track",
-      duration: "2022",
+      institution: "Ulster University UK",
+      degree: "BSc (Hons) Computing System",
+      duration: "2019 - 2022",
     },
     {
-      institution: "Online Course",
-      degree: "Programming Course",
-      duration: "2020 - 2021",
+      institution: "CompTIA",
+      degree: "Security+ certificate",
+      duration: "December 2024",
     },
     {
-      institution: "Tech Institute",
-      degree: "Certified Web Developer",
-      duration: "2019",
+      institution: "Rapti Engineering College",
+      degree: "Diploma in Computer Engineering",
+      duration: "2018",
     },
     {
-      institution: "Design School",
-      degree: "Diploma in Graphic Design",
-      duration: "2016 - 2018",
-    },
-    {
-      institution: "Community College",
-      degree: "Associate Degree in Computer Science",
-      duration: "2014 - 2016",
+      institution: "Tryhackme.com",
+      degree: "Learning & Practice",
+      duration: "2022 - Present",
     },
   ],
 };
@@ -135,41 +111,16 @@ const education = {
 // skills data
 const skills = {
   title: "My skills",
-  description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quibusdam, sunt explicabo inventore.",
+  description: "I have developed a diverse skill set that I continuously refine, concentrating on robust security practices and effective incident management within the evolving technology landscape.",
   skillList: [
-    {
-      icon: <FaHtml5 />,
-      name: "html 5",
-    },
-    {
-      icon: <FaCss3 />,
-      name: "css 3",
-    },
-    {
-      icon: <FaJs />,
-      name: "javascript",
-    },
-    {
-      icon: <FaReact />,
-      name: "react.js",
-    },
-    {
-      icon: <SiNextdotjs />,
-      name: "next.js",
-    },
-    {
-      icon: <SiTailwindcss />,
-      name: "tailwind.css",
-    },
-    {
-      icon: <FaNodeJs />,
-      name: "node.js",
-    },
-    {
-      icon: <FaFigma />,
-      name: "figma",
-    },
+    { name: "Network Security", text: "Network Security" },
+    { name: "Penetration Testing", text: "Penetration Testing" },
+    { name: "Incident Response", text: "Incident Response" },
+    { name: "Security Information and Event Management", text: "SIEM" },
+    { name: "Malware Analysis", text: "Malware Analysis" },
+    { name: "Digital Forensics", text: "Digital Forensics" },
+    { name: "Threat Intelligence", text: "Threat Intelligence" },
+    { name: "Information&Governance", text: "Information Governance" },
   ],
 };
 
@@ -191,7 +142,7 @@ const Resume = () => {
       initial={{ opacity: 0 }}
       animate={{
         opacity: 1,
-        transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
+        transition: { duration: 0.2, ease: "easeIn" },
       }}
       className="min-h-[80vh] flex items-center justify-center py-12 xl:py-0"
     >
@@ -229,7 +180,6 @@ const Resume = () => {
                             {item.position}
                           </h3>
                           <div className="flex items-center gap-3">
-                            {/* dot */}
                             <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
                             <p className="text-white/60">{item.company}</p>
                           </div>
@@ -261,7 +211,6 @@ const Resume = () => {
                             {item.degree}
                           </h3>
                           <div className="flex items-center gap-3">
-                            {/* dot */}
                             <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
                             <p className="text-white/60">{item.institution}</p>
                           </div>
@@ -288,10 +237,10 @@ const Resume = () => {
                       <li key={index}>
                         <TooltipProvider delayDuration={100}>
                           <Tooltip>
-                            <TooltipTrigger className="w-full h-[150px] bg-[#232329] rounded-xl flex justify-center items-center group">
-                              <div className="text-6xl group-hover:text-accent transition-all duration-300">
-                                {skill.icon}
-                              </div>
+                            <TooltipTrigger className="w-full h-[150px] bg-[#232329] rounded-xl flex justify-center items-center group text-center">
+                              <span className="text-2xl text-white group-hover:text-red-600 transition-all duration-300">
+                                {skill.text}
+                              </span>
                             </TooltipTrigger>
                             <TooltipContent>
                               <p className="capitalize">{skill.name}</p>

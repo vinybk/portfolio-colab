@@ -1,33 +1,57 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
-import { usePathname } from "next/navigation";
+import { animate, motion } from "framer-motion";
 
-// components
-import Stairs from "./Stairs";
+// variants
+const stairAnimation = {
+  initial: {
+    top: "0%",
+    opacity: 0,
+  },
+  animate: {
+    top: "100%",
+    opacity: 1,
+    transition: {
+      duration: 0.1,
+      ease: "easeInOut",
+    },
+  },
+  exit: {
+    top: "0%",
+    opacity: 0,
+    transition: {
+      duration: 0.1,
+      ease: "easeInOut",
+    },
+  },
+};
 
-const StairTransition = () => {
-  const pathname = usePathname();
+// calculate the reverse index for staggered delay
+const reverseIndex = (index) => {
+  return 0; // Remove staggered delay
+};
+
+const Stairs = () => {
   return (
     <>
-      <AnimatePresence mode="wait">
-        <div key={pathname}>
-          <div className="h-screen w-screen fixed top-0 left-0 right-0 pointer-events-none z-40 flex">
-            <Stairs />
-          </div>
-
+      {[...Array(6)].map((_, index) => {
+        return (
           <motion.div
-            className="h-screen w-screen fixed bg-primary top-0 pointer-events-none"
-            inital={{ opacity: 1 }}
-            animate={{
-              opacity: 0,
-              transition: { delay: 1, duration: 0.4, ease: "easeInOut" },
+            key={index}
+            variants={stairAnimation}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            transition={{
+              duration: 0.1,
+              ease: "easeInOut",
             }}
+            className="h-full w-full bg-white relative"
           />
-        </div>
-      </AnimatePresence>
+        );
+      })}
     </>
   );
 };
 
-export default StairTransition;
+export default Stairs;

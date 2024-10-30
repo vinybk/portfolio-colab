@@ -8,10 +8,10 @@ const links = [
     name: "home",
     path: "/",
   },
-  {
+ /*{
     name: "services",
     path: "/services",
-  },
+  },*/
   {
     name: "resume",
     path: "/resume",
@@ -35,9 +35,10 @@ const Nav = () => {
           <Link
             href={link.path}
             key={index}
+            prefetch={true} // Add this prop to enable prefetching
             className={`${
-              link.path === pathname && "text-accent border-b-2 border-accent"
-            } capitalize font-medium hover:text-accent transition-all`}
+              link.path === pathname && "text-red-500 border-b-2 border-red-600"
+            } capitalize font-medium hover:text-rose-500 transition-all`}
           >
             {link.name}
           </Link>

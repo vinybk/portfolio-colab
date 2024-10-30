@@ -22,33 +22,35 @@ import WorkSliderBtns from "@/components/WorkSliderBtns";
 const projects = [
   {
     num: "01",
-    category: "frontend",
-    title: "project 1",
+    category: "command line tool",
+    title: "p",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate magnam modi.",
-    stack: [{ name: "Html 5" }, { name: "Css 3" }, { name: "Javascript" }],
+      "Developed a Encryption/Decryption/Hashing Tool.",
+    stack: [{ name: "Python" }],
     image: "/assets/work/thumb1.png",
     live: "",
     github: "",
   },
   {
     num: "02",
-    category: "fullstack",
+    category: "my portfolio ",
     title: "project 2",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate magnam modi.",
-    stack: [{ name: "Next.js" }, { name: "Tailwind.css" }, { name: "Node.js" }],
+      "I successfully developed and deployed the portfolio website you are currently viewing.",
+
+
+    stack: [{ name: "Next.js" }, { name: "Tailwind.css" }, { name: "Node.js" },{name:"React"}],
     image: "/assets/work/thumb2.png",
     live: "",
     github: "",
   },
   {
     num: "03",
-    category: "frontend",
+    category: "Bsc Computing",
     title: "project 3",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate magnam modi.",
-    stack: [{ name: "Next.js" }, { name: "Tailwind.css" }],
+      "In final year of my bachelor's degree, I successfully developed an innovative GPS IoT system designed for tracking pets.",
+    stack: [{name: "Python"},{ name: "Javascript" }, { name: "Arduino" },{ name: "Google Cloud"} ],
     image: "/assets/work/thumb3.png",
     live: "",
     github: "",
@@ -66,13 +68,13 @@ const Work = () => {
   };
 
   return (
-    <motion.section
+    <motion.div
       initial={{ opacity: 0 }}
       animate={{
         opacity: 1,
-        transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
+        transition: { duration: 0.2, ease: "easeIn" },
       }}
-      className="min-h-[80vh] flex flex-col justify-center py-12 xl:px-0"
+      className="min-h-[80vh] flex items-center justify-center py-12 xl:py-0"
     >
       <div className="container mx-auto">
         <div className="flex flex-col xl:flex-row xl:gap-[30px]">
@@ -130,7 +132,7 @@ const Work = () => {
                     </Tooltip>
                   </TooltipProvider>
                 </Link>
-              </div>
+              </div >
             </div>
           </div>
           <div className="w-full xl:w-[50%]">
@@ -151,6 +153,11 @@ const Work = () => {
                         <Image
                           src={project.image}
                           fill
+                          sizes={{
+                            sm: '300px',
+                            md: '500px',
+                            lg: '800px',
+                          }}
                           className="object-cover"
                           alt=""
                         />
@@ -168,7 +175,7 @@ const Work = () => {
           </div>
         </div>
       </div>
-    </motion.section>
+    </motion.div>
   );
 };
 

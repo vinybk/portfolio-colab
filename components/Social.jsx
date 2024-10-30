@@ -1,12 +1,12 @@
 import Link from "next/link";
 
-import { FaGithub, FaLinkedinIn, FaYoutube, FaTwitter } from "react-icons/fa";
+import { FaGithub, FaLinkedinIn, FaYoutube, FaTwitter, FaChrome } from "react-icons/fa";
 
 const socials = [
-  { icon: <FaGithub />, path: "" },
-  { icon: <FaLinkedinIn />, path: "" },
-  { icon: <FaYoutube />, path: "" },
-  { icon: <FaTwitter />, path: "" },
+  { icon: <FaGithub />, path: "https://github.com/B-KEY" },
+  { icon: <FaLinkedinIn />, path: "https://www.linkedin.com/in/bibek-thapa1/" },
+  { icon: <FaChrome />, path: "https://tryhackme.com/r/p/Ghost..." },
+  { icon: <FaTwitter />, path: "https://x.com/ghostcity01" },
 ];
 
 const Social = ({ containerStyles, iconStyles }) => {
