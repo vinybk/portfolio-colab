@@ -54,25 +54,47 @@ const Contact = () => {
   const onSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
-    const firstName = formData.get("firstname");
-    const lastName = formData.get("lastname");
-    const email = formData.get("email");
-    const phone = formData.get("phone");
-    const message = formData.get("message");
-
-    if (!validateEmail(email)) return;
-
+    
+    // Add the access key
     formData.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_KEY);
 
-    const res = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      body: formData
-    }).then((res) => res.json());
+    try {
+        const res = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify({
+                access_key: process.env.NEXT_PUBLIC_WEB3FORMS_KEY,
+                name: formData.get("firstname") + " " + formData.get("lastname"),
+                email: formData.get("email"),
+                phone: formData.get("phone"),
+                message: formData.get("message")
+            })
+        });
 
-    if (res.success) {
-      setSubmissionStatus({ message: "Message submitted successfully!", success: true });
-    } else {
-      setSubmissionStatus({ message: "Error submitting message. Please try again.", success: false });
+        const data = await res.json();
+        
+        if (data.success) {
+            setSubmissionStatus({ 
+                message: "Message submitted successfully!", 
+                success: true 
+            });
+            // Clear the form
+            event.target.reset();
+        } else {
+            setSubmissionStatus({ 
+                message: `Error: ${data.message || 'Something went wrong'}`, 
+                success: false 
+            });
+        }
+    } catch (error) {
+        console.error("Submission error:", error);
+        setSubmissionStatus({ 
+            message: "Error submitting message. Please try again.", 
+            success: false 
+        });
     }
   };
 
