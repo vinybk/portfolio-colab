@@ -1,0 +1,157 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-primary bg-black text-white leading-loose;
+  }
+  .h1 {
+    @apply text-[36px] xl:text-[64px] leading-[1.1] font-semibold;
+  }
+  .h2 {
+    @apply text-[36px] xl:text-[48px] leading-[1.1] font-semibold;
+  }
+  .h3 {
+    @apply text-[20px] xl:text-[24px] leading-[1.1] font-semibold;
+  }
+  .text-outline {
+    -webkit-text-stroke: 1px #ffffff;
+  }
+
+  .text-outline-hover {
+    -webkit-text-stroke: 1px #00ff99;
+  }
+
+  .shadow-glow {
+    box-shadow: 0 0 10px rgba(31, 166, 85, 0.2), 0 0 20px rgba(211, 71, 6, 0.4), 0 0 30px rgba(4, 168, 227, 0.9);
+    margin-bottom: 24px; /* add margin bottom to create space */
+    transition: all 0.3s ease-in-out;
+  }
+  .shadow-glow:hover {
+    box-shadow: 0 0 10px rgba(240, 239, 238, 0.72), 0 0 20px rgba(235, 3, 3, 0.985), 0 0 30px rgba(255, 255, 255, 0.8);
+    
+    transform: translateY(-5px);
+  }
+
+  .photo-shadow-glow {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0), 0 0 20px rgb(0, 0, 0), 0 0 30px rgba(0, 0, 0, 0.983);
+    margin-bottom: 24px; /* add margin bottom to create space */
+    transform: none;
+    border-radius: 50%;
+  }
+  /*.photo-shadow-glow:hover {
+    box-shadow: 0 0 10px rgba(105, 207, 4, 0.4), 0 0 20px rgba(1, 224, 75, 0.6), 0 0 30px rgba(255, 255, 255, 0.8);
+  }*/
+
+  .photo-container {
+    width: 100%; /* adjust the width to your desired size */
+    height: 100%; /* adjust the height to your desired size */
+    border-radius: 50%; /* make the container circular */
+    overflow: hidden; /* add this to prevent the image from overflowing */
+    box-shadow: 0 0 10px rgba(239, 4, 4, 0.3), 0 0 20px rgba(29, 194, 192, 0.4), 0 0 30px rgba(255, 255, 255, 0.7);
+  }
+  .logo-card {
+    background-color: #0e0d0d;
+    padding: 10px 16px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(4, 95, 128, 0.987);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .logo-card:hover {
+    box-shadow: 0 0 20px rgba(234, 8, 8, 0.687);
+    transform: translateY(-5px);
+  }
+  .contact-box {
+    /* Add a glow effect to the contact box */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+  }
+  
+  .contact-box h3 {
+    /* Add a glow effect to the "Want to hire me.." text */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  }
+  
+  .contact-box
+   {
+    /* Add a glow effect to the background of the contact box */
+    box-shadow: 0 0 20px rgba(161, 151, 151, 0.848) inset;
+    border-radius: 10px;
+    background-color: #461313ea; /* Make sure to set the background color */
+  }
+  .particles {
+    position: fixed !important;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  /* Add glow effects to particles */
+  .tsparticles-canvas-el {
+    filter: blur(0.5px);
+  }
+
+  /* Planet orbit paths */
+  .orbit-path {
+    stroke: rgba(255, 255, 255, 0.1);
+    fill: none;
+  }
+
+  /* Star twinkle animation */
+  @keyframes twinkle {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  .particle-star {
+    animation: twinkle 2s infinite;
+  }
+
+  /* Ensure all content stays above particles */
+  .container, 
+  header,
+  nav {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Tab card styles */
+  [role="tab"] {
+    background-color: #0e0d0d;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(69, 103, 114, 0.987);
+    transition: all 0.3s ease-in-out;
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+  }
+
+  /* Selected tab state */
+  [role="tab"][data-state="active"] {
+    background: linear-gradient(135deg, #f81403e8 1%, #3f42e0 100%);
+    box-shadow: 0 0 20px rgba(155, 234, 8, 0.815);
+    transform: translateY(-5px);
+  }
+
+  /* Hover state */
+  [role="tab"]:hover {
+    box-shadow: 0 0 20px rgba(234, 8, 8, 0.687);
+    transform: translateY(-5px);
+  }
+
+  /* Tab list container */
+  [role="tablist"] {
+    background-color: transparent;
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+}
