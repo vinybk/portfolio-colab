@@ -30,38 +30,52 @@ const projects = [
     image: "/assets/work/thumb1.png",
     live: "https://github.com/B-KEY/cryptographic-tool",
     github: "https://github.com/B-KEY/cryptographic-tool",
-  }, 
+  },
+  
   {
     num: "02",
-    category: "Downloader",
+    category: "Weather App",
     title: "project 2",
+    description:
+      "Developed a fully functional full stack weather web-app.",
+    stack: [{ name: "Python" },{name:"javascript"},{name:"Next.js"},{name:"Tailwind.css"}],
+    image: "/assets/work/thumb2.png",
+    live: "https://weather-app-ebon-ten-83.vercel.app/",
+    github: "https://github.com/B-KEY/weather-app",
+  }, 
+
+
+  {
+    num: "03",
+    category: "Downloader",
+    title: "project 3",
     description:
       "Developed a social media video downloader.",
     stack: [{ name: "Python" },{name:"javascript"}],
-    image: "/assets/work/thumb2.png",
+    image: "/assets/work/thumb3.png",
     live: "https://social-media-downloader-5p7b.onrender.com",
     github: "https://github.com/B-KEY/social-media-downloader",
   },
 
   {
-    num: "03",
+    num: "04",
     category: "my portfolio ",
-    title: "project 3",
+    title: "project 4",
     description:
       "I successfully developed and deployed the portfolio website you are currently viewing.",
     stack: [{ name: "Next.js" }, { name: "Tailwind.css" }, { name: "Node.js" },{name:"React"}],
-    image: "/assets/work/thumb3.png",
+    image: "/assets/work/thumb4.png",
     live: "https://bibek-portfolio-iota.vercel.app/",
     github: "https://github.com/B-KEY/BIBEK-PORTFOLIO",
   },
   {
-    num: "04",
+    num: "05",
     category: "Bsc Computing",
-    title: "project 4",
+    title: "project 5",
     description:
       "In final year of my bachelor's degree, I successfully developed an innovative GPS IoT system designed for tracking pets you can find reports from the link below.",
     stack: [{name: "Python"},{ name: "Javascript" }, { name: "Arduino" },{ name: "Google Cloud"} ],
-    image: "/assets/work/thumb4.png",
+    image: "/assets/work/thumb5.png",
     live: "https://github.com/B-KEY/FINAL-REPORT-ON-Designing-and-Developing-GPS-IOT-System-for-Tracking-Pets-_Bibek_Thapa",
     github: "https://github.com/B-KEY/FINAL-REPORT-ON-Designing-and-Developing-GPS-IOT-System-for-Tracking-Pets-_Bibek_Thapa",
   },
