@@ -38,7 +38,7 @@ const projects = [
     title: "project 2",
     description:
       "Developed a fully functional full stack weather web-app.",
-    stack: [{ name: "Python" },{name:"javascript"},{name:"Next.js"},{name:"Tailwind.css"}],
+    stack: [{name:"javascript"},{name:"Next.js"},{name:"Tailwind.css"}],
     image: "/assets/work/thumb2.png",
     live: "https://weather-app-ebon-ten-83.vercel.app/",
     github: "https://github.com/B-KEY/weather-app",
