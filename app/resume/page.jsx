@@ -16,7 +16,7 @@ import { SiTailwindcss, SiNextdotjs } from "react-icons/si";
 const about = {
   title: "About me",
   description:
-    "You can find me on social media platforms like LinkedIn, Twitter, and GitHub from the links in home page",
+    "You can find me on social media platforms like LinkedIn, Twitter, and GitHub from the sociallinks below",
 
   info: [
     {
@@ -33,7 +33,7 @@ const about = {
     },
     {
       fieldName: "LinkedIn",
-      fieldValue: "/bibek-thapa1",
+      fieldValue: "/bibek---thapa",
     },
     {
       fieldName: "Nationality",
@@ -284,7 +284,7 @@ const Resume = () => {
         </Tabs>
         <div className="flex justify-center xl:justify-start mt-8">
           <Social 
-            containerStyles="flex gap-6"
+            containerStyles="flex gap-6 relative -right-[500px]"
             iconStyles="text-2xl text-accent hover:text-pink-600 transition-all duration-300"
           />
         </div>
