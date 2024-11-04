@@ -16,7 +16,7 @@ import { SiTailwindcss, SiNextdotjs } from "react-icons/si";
 const about = {
   title: "About me",
   description:
-    "You can find me on social media platforms like LinkedIn, Twitter, and GitHub from the sociallinks below",
+    "You can find me on social media platforms like LinkedIn, Twitter, and GitHub from the social-links below",
 
   info: [
     {
