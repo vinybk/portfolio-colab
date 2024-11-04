@@ -14,6 +14,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
+import Social from "@/components/Social";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 
 const info = [
@@ -40,6 +41,7 @@ import { useState } from "react";
 const Contact = () => {
   const [submissionStatus, setSubmissionStatus] = useState(null);
   const [emailError, setEmailError] = useState(null);
+  const [formErrors, setFormErrors] = useState({});
 
   const validateEmail = (email) => {
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -51,10 +53,40 @@ const Contact = () => {
     return true;
   };
 
+  const validateForm = (formData) => {
+    const errors = {};
+    
+    // Check required fields
+    const requiredFields = ['firstname', 'lastname', 'email', 'message'];
+    requiredFields.forEach(field => {
+      if (!formData.get(field)) {
+        errors[field] = `${field.charAt(0).toUpperCase() + field.slice(1)} is required`;
+      }
+    });
+
+    // Validate email if it exists
+    const email = formData.get('email');
+    if (email && !validateEmail(email)) {
+      errors.email = 'Invalid email address';
+    }
+
+    setFormErrors(errors);
+    return Object.keys(errors).length === 0;
+  };
+
   const onSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
     
+    // Validate form before submission
+    if (!validateForm(formData)) {
+      setSubmissionStatus({
+        message: "Please fill in all required fields correctly",
+        success: false
+      });
+      return;
+    }
+
     // Add the access key
     formData.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_KEY);
 
@@ -116,17 +148,29 @@ const Contact = () => {
               <p className="text-white/60">If you have any questions or want to reach out to me  please fill out the form below.</p>
               {/* input */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <Input type="text" name="firstname" placeholder="Firstname" />
-                <Input type="text" name="lastname" placeholder="Lastname" />
-                <Input type="email" name="email" placeholder="Email address" />
+                <div>
+                  <Input type="text" name="firstname" placeholder="Firstname" />
+                  {formErrors.firstname && <p className="text-red-500 text-sm mt-1">{formErrors.firstname}</p>}
+                </div>
+                <div>
+                  <Input type="text" name="lastname" placeholder="Lastname" />
+                  {formErrors.lastname && <p className="text-red-500 text-sm mt-1">{formErrors.lastname}</p>}
+                </div>
+                <div>
+                  <Input type="email" name="email" placeholder="Email address" />
+                  {formErrors.email && <p className="text-red-500 text-sm mt-1">{formErrors.email}</p>}
+                </div>
                 <Input type="phone" name="phone" placeholder="Phone number" />
               </div>
               {/* textarea */}
-              <Textarea
-                name="message"
-                className="h-[200px]"
-                placeholder="Type your message here."
-              />
+              <div>
+                <Textarea
+                  name="message"
+                  className="h-[200px]"
+                  placeholder="Type your message here."
+                />
+                {formErrors.message && <p className="text-red-500 text-sm mt-1">{formErrors.message}</p>}
+              </div>
               {/* btn */}
               <Button size="md" className="max-w-40">
                 Send message
@@ -140,8 +184,8 @@ const Contact = () => {
             </form>
           </div>
           {/* info */}
-          <div className="flex-1 flex items-center xl:justify-end order-1 xl:order-none mb-8 xl:mb-0">
-            <ul className="flex flex-col gap-10">
+          <div className="flex-1 flex flex-col items-center xl:items-end order-1 xl:order-none mb-8 xl:mb-0">
+            <ul className="flex flex-col gap-10 mb-8">
               {info.map((item, index) => {
                 return (
                   <li key={index} className="flex items-center gap-6">
@@ -156,6 +200,10 @@ const Contact = () => {
                 );
               })}
             </ul>
+            <Social 
+              containerStyles="flex gap-6 relative -left-[150px]"
+              iconStyles="text-2xl text-accent hover:text-pink-600 transition-all duration-300"
+            />
           </div>
         </div>
       </div>

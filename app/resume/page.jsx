@@ -9,6 +9,7 @@ import {
   FaNodeJs,
 } from "react-icons/fa";
 
+import Social from "@/components/Social";
 import { SiTailwindcss, SiNextdotjs } from "react-icons/si";
 
 // about data
@@ -281,6 +282,12 @@ const Resume = () => {
             </TabsContent>
           </div>
         </Tabs>
+        <div className="flex justify-center xl:justify-start mt-8">
+          <Social 
+            containerStyles="flex gap-6"
+            iconStyles="text-2xl text-accent hover:text-pink-600 transition-all duration-300"
+          />
+        </div>
       </div>
     </motion.div>
   );

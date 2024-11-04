@@ -4,7 +4,7 @@ import { FaGithub, FaLinkedinIn, FaYoutube, FaTwitter, FaChrome } from "react-ic
 
 const socials = [
   { icon: <FaGithub />, path: "https://github.com/B-KEY" },
-  { icon: <FaLinkedinIn />, path: "https://www.linkedin.com/in/bibek-thapa1/" },
+  { icon: <FaLinkedinIn />, path: "https://www.linkedin.com/in/bibek---thapa" },
   { icon: <FaChrome />, path: "https://tryhackme.com/r/p/Ghost..." },
   { icon: <FaTwitter />, path: "https://x.com/ghostcity01" },
 ];
