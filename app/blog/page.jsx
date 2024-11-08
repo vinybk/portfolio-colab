@@ -95,7 +95,7 @@ const Blog = () => {
                     <h3 className="text-xl font-semibold mb-2 group-hover:text-accent">
                       {blog.title}
                     </h3>
-                    <p className="text-white/60 mb-4 line-clamp-3">
+                    <p className="text-white/60 mb-4 line-clamp-2">
                       {blog.description}
                     </p>
                     <div className="flex justify-between items-center">
