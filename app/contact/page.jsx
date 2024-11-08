@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -42,6 +43,7 @@ const Contact = () => {
   const [submissionStatus, setSubmissionStatus] = useState(null);
   const [emailError, setEmailError] = useState(null);
   const [formErrors, setFormErrors] = useState({});
+  const router = useRouter();
 
   const validateEmail = (email) => {
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -80,15 +82,11 @@ const Contact = () => {
     
     // Validate form before submission
     if (!validateForm(formData)) {
-      setSubmissionStatus({
-        message: "Please fill in all required fields correctly",
-        success: false
-      });
       return;
     }
 
-    // Add the access key
-    formData.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_KEY);
+    // Get the access key from environment variable
+    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_KEY;
 
     try {
         const res = await fetch("https://api.web3forms.com/submit", {
@@ -98,7 +96,7 @@ const Contact = () => {
                 "Accept": "application/json"
             },
             body: JSON.stringify({
-                access_key: process.env.NEXT_PUBLIC_WEB3FORMS_KEY,
+                access_key: "2cab3822-c064-4c6d-9b2a-e2a52737b7a1", // Directly use the access key
                 name: formData.get("firstname") + " " + formData.get("lastname"),
                 email: formData.get("email"),
                 phone: formData.get("phone"),
@@ -109,12 +107,8 @@ const Contact = () => {
         const data = await res.json();
         
         if (data.success) {
-            setSubmissionStatus({ 
-                message: "Message submitted successfully!", 
-                success: true 
-            });
-            // Clear the form
-            event.target.reset();
+            // Redirect to thank you page on success
+            router.push('/thankyou');
         } else {
             setSubmissionStatus({ 
                 message: `Error: ${data.message || 'Something went wrong'}`, 

@@ -24,12 +24,12 @@
   }
 
   .shadow-glow {
-    box-shadow: 0 0 10px rgba(31, 166, 85, 0.2), 0 0 20px rgba(211, 71, 6, 0.4), 0 0 30px rgba(4, 168, 227, 0.9);
+    box-shadow: 0 0 10px rgba(238, 90, 5, 0.678), 0 0 20px rgba(236, 38, 31, 0.4), 0 0 30px rgba(24, 23, 23, 0.9);
     margin-bottom: 24px; /* add margin bottom to create space */
     transition: all 0.3s ease-in-out;
   }
   .shadow-glow:hover {
-    box-shadow: 0 0 10px rgba(240, 239, 238, 0.72), 0 0 20px rgba(235, 3, 3, 0.985), 0 0 30px rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 10px rgba(129, 18, 4, 0.753), 0 0 20px rgba(74, 7, 94, 0.985), 0 0 30px rgba(148, 4, 4, 0.8);
     
     transform: translateY(-5px);
   }
@@ -53,14 +53,15 @@
   }
   .logo-card {
     background-color: #0e0d0d;
-    padding: 10px 16px;
+    padding: 10px 20px;
     border-radius: 10px;
-    box-shadow: 0 0 20px rgba(4, 95, 128, 0.987);
-    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
   }
   
   .logo-card:hover {
-    box-shadow: 0 0 20px rgba(234, 8, 8, 0.687);
+    box-shadow: 0 0 20px rgba(202, 6, 6, 0.356);
     transform: translateY(-5px);
   }
   .contact-box {
@@ -77,9 +78,9 @@
   .contact-box
    {
     /* Add a glow effect to the background of the contact box */
-    box-shadow: 0 0 20px rgba(161, 151, 151, 0.848) inset;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.848) inset;
     border-radius: 10px;
-    background-color: #461313ea; /* Make sure to set the background color */
+    background-color: #00000000; /* Make sure to set the background color */
   }
   .particles {
     position: fixed !important;
@@ -153,5 +154,128 @@
     display: flex;
     flex-direction: column;
     gap: 15px;
+  }
+
+  /* Add this to your existing contact-box styles or create new ones */
+  .contact-box {
+    box-shadow: 0 0 20px rgba(2, 81, 100, 0.848),
+                0 0 30px rgba(255, 0, 0, 0.3),
+                0 0 40px rgba(0, 0, 255, 0.514),
+                0 0 50px rgba(128, 0, 128, 0.3);
+    background-color: #000000;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+  }
+
+  @keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .animate-gradient {
+    animation: gradient 3s ease infinite;
+    background-size: 200% 200%;
+  }
+
+  /* Add this to your existing contact-box styles */
+  .contact-box {
+    position: relative;
+    background-color: #000000;
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  .contact-box::before {
+    content: '';
+    position: absolute;
+    top: -150%;
+    left: -150%;
+    width: 400%;
+    height: 400%;
+    background: conic-gradient(
+      from 0deg,
+      transparent,
+      #ff0000,
+      #ffe600,
+      #f700ff,
+      transparent 360deg
+    );
+    animation: rotate 4s linear infinite;
+    z-index: -1;
+    border-radius: 45%;
+  }
+
+  .contact-box::after {
+    content: '';
+    position: absolute;
+    inset: 2px;
+    background: #000000;
+    border-radius: 8px;
+    z-index: -1;
+  }
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* Update the existing contact-box styles */
+  .contact-box {
+    box-shadow: 0 0 20px rgba(100, 46, 2, 0.848),
+                0 0 30px rgba(0, 0, 0, 0.3),
+                0 0 40px rgba(0, 0, 0, 0.514),
+                0 0 50px rgba(29, 28, 29, 0.3);
+    transition: all 0.3s ease;
+  }
+
+  .logo-card::before {
+    content: '';
+    position: absolute;
+    top: -150%;
+    left: -150%;
+    width: 400%;
+    height: 400%;
+    background: conic-gradient(
+      from 0deg,
+      transparent,
+      #ff0000,
+      #ffe600,
+      #f700ff,
+      transparent 360deg
+    );
+    animation: rotate 4s linear infinite;
+    z-index: 0;
+    border-radius: 45%;
+  }
+
+  .logo-card::after {
+    content: '';
+    position: absolute;
+    inset: 2px;
+    background: #0e0d0d;
+    border-radius: 8px;
+    z-index: 0;
+  }
+
+  .logo-card h1 {
+    position: relative;
+    z-index: 1;
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  }
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
   }
 }
