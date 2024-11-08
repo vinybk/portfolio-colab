@@ -279,3 +279,105 @@
     }
   }
 }
+
+.section-title {
+  @apply text-4xl font-bold text-center mb-8;
+}
+
+.blog-card {
+  @apply bg-[#232329] rounded-xl overflow-hidden transition-all duration-300;
+}
+
+.blog-card:hover {
+  @apply shadow-glow transform -translate-y-2;
+}
+
+@keyframes glow-x {
+  0%, 100% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes glow-y {
+  0%, 100% {
+    transform: translateY(-100%);
+  }
+  50% {
+    transform: translateY(100%);
+  }
+}
+
+.animate-glow-x {
+  animation: glow-x 3s linear infinite;
+}
+
+.animate-glow-y {
+  animation: glow-y 3s linear infinite;
+}
+
+/* Add this to your globals.css */
+.blog-card-glow {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(223, 4, 175, 0.842); /* Initial accent color glow */
+}
+
+.blog-card-glow::before {
+  content: '';
+  position: absolute;
+  top: -150%;
+  left: -150%;
+  width: 400%;
+  height: 400%;
+  background: conic-gradient(
+    from 0deg,
+    transparent,
+    #ff0000,
+    #ffe600,
+    #f700ff,
+    transparent 360deg
+  );
+  opacity: 0;
+  transition: opacity 0.3s;
+  animation: rotate 4s linear infinite;
+  z-index: 0;
+  border-radius: 45%;
+}
+
+.blog-card-glow::after {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  background: #232329;
+  border-radius: 8px;
+  z-index: 1;
+}
+
+.blog-card-glow:hover::before {
+  opacity: 1;
+}
+
+/* Add floating animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+    box-shadow: 0 0 15px rgba(255, 17, 0, 0.527);
+  }
+  50% {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(238, 255, 0, 0.589);
+  }
+}
+
+/* Make sure you have the rotate keyframes (you already do in your code) */
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
