@@ -18,19 +18,19 @@ const Home = () => {
         <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24">
           {/* text */}
           <div className="text-center xl:text-left  order-2 xl:order-none">
-            <span className="text-xl">CyberSecurity Analyst</span>
+            <span className="text-xl">Full Stack Software Developer</span>
             <h1 className="h1 mb-6">
             <TypeAnimation
   sequence={[
-    'Hello I\'m\nBibek Thapa',  // First display
+    'Hello I\'m\nVin Brun',  // First display
     4000, // Wait 4 seconds
     '',    // Clear the text
     1000,  // Wait 1 second
-    'Hello I\'m\nBibek Thapa',  // Second display
+    'Hello I\'m\nVin Brun',  // Second display
     4000,
     '',
     1000,
-    'Hello I\'m\nBibek Thapa',  // Third display
+    'Hello I\'m\nVin Brun',  // Third display
     4000,
   ]}
   wrapper="span"
@@ -44,12 +44,12 @@ const Home = () => {
             </h1>
             <div className="xl:w-[] h-full flex flex-col gap-5 p-7 bg-[#070707] rounded-xl order-2 xl:order-none shadow-glow">
               <p className="max-w-[500px] mb-4 text-white/80 leading-relaxed tracking-normal">
-                I am a cybersecurity enthusiast passionate about safeguarding digital landscapes. With a keen interest in emerging technologies and threat landscapes, I strive to stay ahead of potential vulnerabilities. My journey in cybersecurity involves continuous learning and hands-on experience in areas like network security, ethical hacking, threat analysis and digital forensics.
+                Im a software developer focused on web technologies.
               </p>
             </div>
             {/* btn and socials */}
             <div className="flex flex-col xl:flex-row items-center gap-8">
-              <a href="https://drive.google.com/file/d/1R7aEpokDHLuAlXhdAHWswHlQ_q-O7kU6/view?usp=sharing" download>
+              <a href="" download>
                 <Button
                   variant="outline"
                   size="lg"

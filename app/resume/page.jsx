@@ -21,35 +21,31 @@ const about = {
   info: [
     {
       fieldName: "Name",
-      fieldValue: "Bibek Thapa",
+      fieldValue: "Vin Brun",
     },
     {
-      fieldName: "Phone",
-      fieldValue: "07459939217",
-    },
-    {
-      fieldName: "Experience",
-      fieldValue: "Graduate",
+      fieldName: "Education",
+      fieldValue: "Undergraduate",
     },
     {
       fieldName: "LinkedIn",
-      fieldValue: "/bibek---thapa",
+      fieldValue: "/vinbrun",
     },
     {
       fieldName: "Nationality",
-      fieldValue: "Nepalese",
+      fieldValue: "Brazilian",
+    },
+    /*{
+      fieldName: "Available",
+      fieldValue: "yes",
+    },*/
+    {
+      fieldName: "Languages",
+      fieldValue: "English, Portuguese",
     },
     {
       fieldName: "Email",
-      fieldValue: "thapabibekuk55@gmail.com",
-    },
-    {
-      fieldName: "Available",
-      fieldValue: "yes",
-    },
-    {
-      fieldName: "Languages",
-      fieldValue: "English, Nepali",
+      fieldValue: "viniciusbrun.dev@gmail.com",
     },
   ],
 };
@@ -62,14 +58,9 @@ const experience = {
     "A summary of my professional journey, highlighting my roles in technology and operations at leading organizations such as Correlation One and Amazon.. ",
   items: [
     {
-      company: "Correlation One",
-      position: "Information Technology Program",
+      company: "Prometheus Information Systems",
+      position: "Web Development Intern",
       duration: "2024 - Present",
-    },
-    {
-      company: "Amazon",
-      position: "Inbound Flow Operation",
-      duration: "2022 - Present",
     },
   ],
 };
@@ -82,29 +73,9 @@ const education = {
     "I am dedicated to ongoing education and continuous professional development, aiming to enhance my knowledge and expertise in the field of technology.",
   items: [
     {
-      institution: "Northumbria University UK",
-      degree: "MSc CyberSecurity",
-      duration: "2024 - 2026",
-    },
-    {
-      institution: "Ulster University UK",
-      degree: "BSc (Hons) Computing System",
-      duration: "2019 - 2022",
-    },
-    {
-      institution: "CompTIA",
-      degree: "Security+ certificate",
-      duration: "December 2024",
-    },
-    {
-      institution: "Rapti Engineering College",
-      degree: "Diploma in Computer Engineering",
-      duration: "2018",
-    },
-    {
-      institution: "Tryhackme.com",
-      degree: "Learning & Practice",
-      duration: "2022 - Present",
+      institution: "University of the People",
+      degree: "AS Computer Science",
+      duration: "2022 - 2026",
     },
   ],
 };
@@ -114,14 +85,14 @@ const skills = {
   title: "My skills",
   description: "I have developed a diverse skill set that I continuously refine, concentrating on robust security practices and effective incident management within the evolving technology landscape.",
   skillList: [
-    { name: "Network Security", text: "Network Security" },
-    { name: "Penetration Testing", text: "Penetration Testing" },
-    { name: "Incident Response", text: "Incident Response" },
-    { name: "Security Information and Event Management", text: "SIEM" },
-    { name: "Malware Analysis", text: "Malware Analysis" },
-    { name: "Digital Forensics", text: "Digital Forensics" },
-    { name: "Threat Intelligence", text: "Threat Intelligence" },
-    { name: "Information&Governance", text: "Information Governance" },
+//    { name: "Network Security", text: "Network Security" },
+//    { name: "Penetration Testing", text: "Penetration Testing" },
+//    { name: "Incident Response", text: "Incident Response" },
+//    { name: "Security Information and Event Management", text: "SIEM" },
+//    { name: "Malware Analysis", text: "Malware Analysis" },
+//    { name: "Digital Forensics", text: "Digital Forensics" },
+//    { name: "Threat Intelligence", text: "Threat Intelligence" },
+//    { name: "Information&Governance", text: "Information Governance" },
   ],
 };
 

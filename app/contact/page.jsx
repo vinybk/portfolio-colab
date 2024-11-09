@@ -19,20 +19,20 @@ import Social from "@/components/Social";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 
 const info = [
-  {
+  /*{
     icon: <FaPhoneAlt />,
     title: "Phone",
-    description: "07459939217",
-  },
+    description: "",
+  },*/
   {
     icon: <FaEnvelope />,
     title: "Email",
-    description: "thapabibekuk55@gmail.com",
+    description: "viniciusbrun.dev@gmail.com",
   },
   {
     icon: <FaMapMarkerAlt />,
     title: "Address",
-    description: "Woolwich, London UK",
+    description: "Porto Alegre, Brazil",
   },
 ];
 
@@ -138,7 +138,7 @@ const Contact = () => {
           {/* form */}
           <div className="xl:w-[54%] order-2 xl:order-none">
           <form onSubmit={onSubmit} className="flex flex-col gap-6 p-10 bg-[#000000] rounded-xl contact-box">
-  <h3 className="text-4xl text-accent">Want to hire me..</h3>
+  <h3 className="text-4xl text-accent">Start your Journey today ..</h3>
               <p className="text-white/60">If you have any questions or want to reach out to me  please fill out the form below.</p>
               {/* input */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
