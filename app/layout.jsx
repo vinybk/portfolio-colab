@@ -14,7 +14,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata = {
-  title: "BIBEK THAPA",
+  title: "Vin Brun",
   description: "HI",
 };
 

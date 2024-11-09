@@ -13,7 +13,7 @@ const Header = () => {
         <Link href="/">
           <div className="logo-card">
             <h1 className="text-4xl font-semibold">
-              B-KEY<span className="text-green-500">.</span>
+              VIN BRUN<span className="text-green-500">.</span>
             </h1>
           </div>
         </Link>
