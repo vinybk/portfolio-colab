@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { DEV_TO_CONFIG } from "@/config/constants";
+import { FaBookmark } from 'react-icons/fa';
 
 const POSTS_PER_PAGE = 6;
 
@@ -53,7 +54,7 @@ const Blog = () => {
       <div className="container mx-auto">
         <div className="flex flex-col items-center mb-12">
           <h2 className="h2 text-center mb-4">My Blog Posts</h2>
-          <div className="w-[150px] h-[2px] bg-accent mb-8"></div>
+          <div className="w-[200px] h-[2px] bg-pink-600 mb-8"></div>
         </div>
 
         {loading ? (
@@ -65,18 +66,18 @@ const Blog = () => {
             {visibleBlogs.map((blog) => (
               <div 
                 key={blog.id} 
-                className="blog-card-glow bg-[#232329] rounded-lg overflow-hidden group transition-all duration-300 flex flex-col max-w-[350px] mx-auto w-full relative hover:shadow-none"
+                className="blog-card-glow bg-[#232329] rounded-lg overflow-hidden group transition-all duration-300 flex flex-col max-w-[400px] mx-auto w-full relative hover:shadow-none h-[550px]"
                 style={{
                   animation: 'float 3s ease-in-out infinite'
                 }}
               >
                 <div className="relative z-[2] flex flex-col w-full h-full">
-                  <div className="relative h-[160px] overflow-hidden bg-[#2a2a32]">
+                  <div className="relative w-full aspect-[16/10] overflow-hidden bg-[#2a2a32]">
                     {blog.cover_image ? (
                       <img
                         src={blog.cover_image}
                         alt={blog.title}
-                        className="w-full h-[160px] object-cover group-hover:scale-105 transition-all duration-300"
+                        className="w-full h-full object-cover"
                         style={{
                           objectPosition: 'center',
                           backgroundColor: '#2a2a32',
@@ -86,48 +87,74 @@ const Blog = () => {
                         }}
                       />
                     ) : (
-                      <div className="w-full h-[160px] flex items-center justify-center text-accent">
+                      <div className="w-full h-full flex items-center justify-center text-accent">
                         <span className="text-4xl">📝</span>
                       </div>
                     )}
                   </div>
-                  <div className="p-5 flex flex-col flex-grow">
-                    <h3 className="text-xl font-semibold mb-2 group-hover:text-accent">
-                      {blog.title}
-                    </h3>
-                    <p className="text-white/60 mb-4 line-clamp-2">
-                      {blog.description}
-                    </p>
-                    <div className="flex justify-between items-center">
+                  <div className="p-5 flex flex-col h-full">
+                    <div>
                       <Link 
                         href={blog.url}
-                        className="text-accent hover:text-accent-hover transition-colors"
+                        className="block"
                         target="_blank"
                       >
-                        👉Read More
+                        <h3 className="text-xl font-semibold mb-2 group-hover:text-red">
+                          <Link 
+                            href={blog.url}
+                            className="hover:text-red-600 transition-colors"
+                            target="_blank"
+                          >
+                            {blog.title}
+                          </Link>
+                        </h3>
                       </Link>
-                      <div className="flex items-center gap-4">
+                      <p className="text-white/60 mb-4 line-clamp-4">
+                        {blog.description}
+                      </p>
+                    </div>
+
+                    <div className="flex-grow">
+                      <div className="flex items-center gap-4 mb-2">
                         <span className="text-white/60 text-sm">
                           {new Date(blog.published_at).toLocaleDateString()}
                         </span>
                         <div className="flex items-center gap-2">
                           <span className="text-red-600">❤ {blog.positive_reactions_count}</span>
                           <span className="text-white-500">💬 {blog.comments_count}</span>
+                          <span className="text-blue-500">
+                            <FaBookmark className="inline mr-1" />
+                            {blog.public_reactions_count}
+                          </span>
+                      
+                        <span className="text-purple-500">⌚{blog.reading_time_minutes}min</span>
+                         
                         </div>
                       </div>
+                      
+                      {blog.tag_list.length > 0 && (
+                        <div className="flex flex-wrap gap-2">
+                          {blog.tag_list.slice(0, 4).map((tag, index) => (
+                            <span 
+                              key={index}
+                              className="text-xs bg-accent/10 text-accent px-2 py-1 rounded"
+                            >
+                              #{tag}
+                            </span>
+                          ))}
+                        </div>
+                      )}
                     </div>
-                    {blog.tag_list.length > 0 && (
-                      <div className="mt-4 flex flex-wrap gap-2">
-                        {blog.tag_list.map((tag, index) => (
-                          <span 
-                            key={index}
-                            className="text-xs bg-accent/10 text-accent px-2 py-1 rounded"
-                          >
-                            #{tag}
-                          </span>
-                        ))}
-                      </div>
-                    )}
+
+                    <div className="mt-auto pt-4">
+                      <Link 
+                        href={blog.url}
+                        className="text-accent hover:text-red-600 transition-colors block"
+                        target="_blank"
+                      >
+                        👉Read More
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>
