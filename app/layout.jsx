@@ -14,7 +14,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata = {
-  title: "Vin Brun",
+  title: "Vin Brun | Full Stack Software Developer",
   description: "HI",
 };
 
