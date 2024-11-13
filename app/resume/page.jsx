@@ -16,16 +16,16 @@ import { SiTailwindcss, SiNextdotjs } from "react-icons/si";
 const about = {
   title: "About me",
   description:
-    "You can find me on social media platforms like LinkedIn, Twitter, and GitHub from the social-links below",
+    "You can find me on social media platforms in the footer links.",
 
   info: [
     {
       fieldName: "Name",
-      fieldValue: "Vin Brun",
+      fieldValue: "Vinicius (Vin) Brun",
     },
     {
       fieldName: "Education",
-      fieldValue: "Undergraduate",
+      fieldValue: "Electronics Technician",
     },
     {
       fieldName: "LinkedIn",
@@ -55,12 +55,17 @@ const experience = {
   icon: "/assets/resume/badge.svg",
   title: "My experience",
   description:
-    "A summary of my professional journey, highlighting my roles in technology and operations at leading organizations such as Correlation One and Amazon.. ",
+    "A summary of my professional journey.",
   items: [
     {
       company: "Prometheus Information Systems",
       position: "Web Development Intern",
-      duration: "2024 - Present",
+      duration: "May 2024 - Present",
+    },
+    {
+      company: "CRS Telecom",
+      position: "Technical Support Analyst",
+      duration: "Aug 2022 - Jul 2024",
     },
   ],
 };
@@ -70,12 +75,17 @@ const education = {
   icon: "/assets/resume/cap.svg",
   title: "My education",
   description:
-    "I am dedicated to ongoing education and continuous professional development, aiming to enhance my knowledge and expertise in the field of technology.",
+    "I am adept to continous education and enjoy being part of the academic community.",
   items: [
     {
       institution: "University of the People",
-      degree: "AS Computer Science",
+      degree: "Associate's Degree in Computer Science",
       duration: "2022 - 2026",
+    },
+    {
+      institution: "Foundation Technical School Liberato",
+      degree: "Electronics technician",
+      duration: "2013 - 2017",
     },
   ],
 };
@@ -83,14 +93,14 @@ const education = {
 // skills data
 const skills = {
   title: "My skills",
-  description: "I have developed a diverse skill set that I continuously refine, concentrating on robust security practices and effective incident management within the evolving technology landscape.",
+  description: "This is my Web Development skillset in 2024.",
   skillList: [
-//    { name: "Network Security", text: "Network Security" },
-//    { name: "Penetration Testing", text: "Penetration Testing" },
-//    { name: "Incident Response", text: "Incident Response" },
-//    { name: "Security Information and Event Management", text: "SIEM" },
-//    { name: "Malware Analysis", text: "Malware Analysis" },
-//    { name: "Digital Forensics", text: "Digital Forensics" },
+    { name: "React", text: "React" },
+    { name: "Node.js", text: "Node.js" },
+    { name: "Docker", text: "Docker" },
+    { name: "Git", text: "Git" },
+    { name: "GitHub Actions", text: "GitHub Actions" },
+    { name: "PostgreSQL", text: "PostgreSQL" },
 //    { name: "Threat Intelligence", text: "Threat Intelligence" },
 //    { name: "Information&Governance", text: "Information Governance" },
   ],
