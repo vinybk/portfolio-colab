@@ -21,11 +21,11 @@ const links = [
  /* {
     name: "work",
     path: "/work",
-  },
+  },*/
   {
     name: "blog",
-    path: "/blog",
-  },*/
+    path: "https://blog.vinbrun.com",
+  },
 
   {
     name: "contact",
