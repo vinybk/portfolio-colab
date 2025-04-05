@@ -22,15 +22,15 @@ const Home = () => {
             <h1 className="h1 mb-6">
             <TypeAnimation
   sequence={[
-    'Hello I\'m\nVin Brun',  // First display
+    'Hello I\'m\nViny Brun ',  // First display
     4000, // Wait 4 seconds
     '',    // Clear the text
     1000,  // Wait 1 second
-    'Hello I\'m\nVin Brun',  // Second display
+    'Hello I\'m\nViny Brun',  // Second display
     4000,
     '',
     1000,
-    'Hello I\'m\nVin Brun',  // Third display
+    'Hello I\'m\nViny Brun',  // Third display
     4000,
   ]}
   wrapper="span"
@@ -44,12 +44,20 @@ const Home = () => {
             </h1>
             <div className="xl:w-[] h-full flex flex-col gap-5 p-7 bg-[#070707] rounded-xl order-2 xl:order-none shadow-glow">
               <p className="max-w-[500px] mb-4 text-white/80 leading-relaxed tracking-normal">
-                Im a software developer focused on web technologies.
+              I'm a Site Reliability Engineer and Backend Developer passionate about decentralized platforms, and open-source tools. I focus on keeping systems running smoothly at the VM level while deploying apps that help creators reach their audiences.
+
+I work with platforms for creators like Jimmy Dore and Sam Tripoli, deploying and managing apps like PeerTube, Misskey, Element/Matrix, Jitsi, and Revospring (our fork of Retrospring). On the backend, I develop internal Node.js and Linux automation tools, handle CI/CD pipelines, and manage VPS infrastructures with Docker and Nginx.
+
+I'm active in the open-source community and always diving deeper into technologies like Node.js, PostgreSQL, Redis, Linux, and DevOps. My long-term goal is to blend backend development with site reliability to help startups scale.
+
+Outside of work, I volunteer with Mensa Brazil, supporting gifted individuals and contributing to community initiatives.
+
+What I'm working toward: Becoming a DevOps expert who helps startups build reliable, scalable systems during their early growth stages.
               </p>
             </div>
             {/* btn and socials */}
             <div className="flex flex-col xl:flex-row items-center gap-8">
-              {<a href="/CV Vin Brun.pdf" download>
+              {<a href="/CV Viny Brun Kriesang.pdf" download>
                 <Button
                   variant="outline"
                   size="lg"

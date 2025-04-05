@@ -23,7 +23,7 @@ const Photo = () => {
           className="w-[300px] h-[300px] xl:w-[506px] xl:h-[506px] mix-blend-lighten absolute rounded-full"
         >
           <Image
-            src="/assets/photo.png"
+            src="/assets/viny_official_photo.jpg"
             priority
             quality={100}
             fill

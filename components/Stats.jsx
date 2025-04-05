@@ -7,18 +7,18 @@ const stats = [
     num: 12,
     text: "Years of experience",
   },*/
-  {
+  /*{
     num: 12,
     text: "Projects completed",
-  },
+  },*/
  /* {
     num: 1,
     text: "Technologies mastered",
   },*/
-  {
+  /*{
     num: 89,
     text: "Contribuitions lats year",
-  },
+  },*/
 ];
 
 const Stats = () => {

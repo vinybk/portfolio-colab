@@ -96,7 +96,7 @@ const Contact = () => {
                 "Accept": "application/json"
             },
             body: JSON.stringify({
-                access_key: "2cab3822-c064-4c6d-9b2a-e2a52737b7a1", // Directly use the access key
+                access_key: "6312848d-e7cd-4bf6-a707-20d5c8530295", // Directly use the access key
                 name: formData.get("firstname") + " " + formData.get("lastname"),
                 email: formData.get("email"),
                 phone: formData.get("phone"),
