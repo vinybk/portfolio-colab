@@ -22,15 +22,15 @@ const Home = () => {
             <h1 className="h1 mb-6">
             <TypeAnimation
   sequence={[
-    'Hello I\'m\nViny Brun ',  // First display
+    'Hello I\'m\nViny Brun Kriesang',  // First display
     4000, // Wait 4 seconds
     '',    // Clear the text
     1000,  // Wait 1 second
-    'Hello I\'m\nViny Brun',  // Second display
+    'Hello I\'m\nViny Brun Kriesang',  // Second display
     4000,
     '',
     1000,
-    'Hello I\'m\nViny Brun',  // Third display
+    'Hello I\'m\nViny Brun Kriesang',  // Third display
     4000,
   ]}
   wrapper="span"
