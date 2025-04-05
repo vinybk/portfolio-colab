@@ -18,7 +18,7 @@ const Home = () => {
         <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24">
           {/* text */}
           <div className="text-center xl:text-left  order-2 xl:order-none">
-            <span className="text-xl">Full Stack Software Developer</span>
+            <span className="text-xl">Site Reliability Engineer (SRE) | DevOps | Scalable, Decentralized Systems | Open Source | Revospring Maintainer/span>
             <h1 className="h1 mb-6">
             <TypeAnimation
   sequence={[
@@ -45,14 +45,6 @@ const Home = () => {
             <div className="xl:w-[] h-full flex flex-col gap-5 p-7 bg-[#070707] rounded-xl order-2 xl:order-none shadow-glow">
               <p className="max-w-[500px] mb-4 text-white/80 leading-relaxed tracking-normal">
               Site Reliability Engineer and Backend Developer passionate about decentralized platforms, and open-source tools. I focus on keeping systems running smoothly at the VM level while deploying apps that help creators reach their audiences.
-
-I work with platforms for creators like Jimmy Dore and Sam Tripoli, deploying and managing apps like PeerTube, Misskey, Element/Matrix, Jitsi, and Revospring (our fork of Retrospring). On the backend, I develop internal Node.js and Linux automation tools, handle CI/CD pipelines, and manage VPS infrastructures with Docker and Nginx.
-
-Active in the open-source community and always diving deeper into technologies like Node.js, PostgreSQL, Redis, Linux, and DevOps. My long-term goal is to blend backend development with site reliability to help startups scale.
-
-Outside of work, I volunteer with Mensa Brazil, supporting gifted individuals and contributing to community initiatives.
-
-Working toward: Becoming a DevOps expert who helps startups build reliable, scalable systems during their early growth stages.
               </p>
             </div>
             {/* btn and socials */}
