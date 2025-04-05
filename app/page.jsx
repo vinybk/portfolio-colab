@@ -18,7 +18,7 @@ const Home = () => {
         <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24">
           {/* text */}
           <div className="text-center xl:text-left  order-2 xl:order-none">
-            <span className="text-xl">Site Reliability Engineer (SRE) | DevOps | Scalable, Decentralized Systems | Open Source | Revospring Maintainer/span>
+            <span className="text-xl">Site Reliability Engineer (SRE) | DevOps | Scalable, Decentralized Systems | Open Source | Revospring Maintainer </span>
             <h1 className="h1 mb-6">
             <TypeAnimation
   sequence={[
